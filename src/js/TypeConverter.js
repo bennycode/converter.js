@@ -6,6 +6,31 @@ class TypeConverter {
   constructor() {
   }
 
+  static typedArrayToUnicodeString(typedArray) {
+    if (typedArray instanceof Uint8Array) {
+      if (typeof TextDecoder === 'function') {
+        return new TextDecoder('utf-8', {fatal: true}).decode(typedArray);
+      } else {
+        const binaryString = Array.prototype.map.call(typedArray, function(character) {
+          return String.fromCharCode(character);
+        }).join('');
+
+        const pattern = new RegExp('(.)', 'g');
+        const escapedString = binaryString.replace(pattern, function(match, subString) {
+          let code = subString.charCodeAt(subString).toString(16).toUpperCase();
+          if (code.length < 2) {
+            code = `0${code}`;
+          }
+          return `%${code}`;
+        });
+
+        return decodeURIComponent(escapedString);
+      }
+    } else {
+      throw new UnexpectedInputError(`Unexpected input type "${typeof unicodeString}".`);
+    }
+  }
+
   static unicodeStringToTypedArray(unicodeString) {
     if (unicodeString instanceof Uint8Array) {
       return unicodeString;

@@ -8,6 +8,10 @@ try {
   console.log(error.message);
 }
 
-const unicode = "Heart eyes emoji 😍";
-const result = TypeConverter.unicodeStringToTypedArray(unicode);
-console.log('Length', result.byteLength);
+const omega = '\u03A9';
+
+const encoded = TypeConverter.unicodeStringToTypedArray(omega);
+console.log('Length', encoded.byteLength);
+
+const decoded = TypeConverter.typedArrayToUnicodeString(encoded);
+console.log(decoded);

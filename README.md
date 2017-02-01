@@ -7,6 +7,6 @@ First draft of a converter collection ("something" → "something-else"). Writte
 ```javascript 1.6
 const converter = require('wire-webapp-converter');
 
-const result = converter.TypeConverter.unicodeStringToTypedArray('😍');
-console.log('Length', result.byteLength); // 21
+const result = converter.TypeConverter.unicodeStringToTypedArray('\u03A9');
+console.log('Length', result.byteLength); // 3
 ```
