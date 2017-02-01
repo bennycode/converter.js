@@ -1,0 +1,15 @@
+{
+  "description": "Collection of commonly used converting functions.",
+  "license": "GPL-3.0",
+  "main": "index.js",
+  "name": "wire-webapp-converter",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wireapp/wire-webapp-converter.git"
+  },
+  "scripts": {
+    "test": "eslint src/js/** --fix"
+  },
+  "version": "1.0.0"
+}

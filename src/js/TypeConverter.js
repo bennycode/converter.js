@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const UnexpectedInputError = require('./UnexpectedInputError');
 
@@ -9,13 +9,13 @@ class TypeConverter {
   static unicodeStringToTypedArray(unicodeString) {
     if (unicodeString instanceof Uint8Array) {
       return unicodeString;
-    } else if (typeof unicodeString === "string") {
-      if (typeof TextEncoder === "function") {
-        return new TextEncoder("utf-8").encode(unicodeString);
+    } else if (typeof unicodeString === 'string') {
+      if (typeof TextEncoder === 'function') {
+        return new TextEncoder('utf-8').encode(unicodeString);
       } else {
         const escapedString = encodeURIComponent(unicodeString);
 
-        const pattern = new RegExp("%([0-9A-F]{2})", "g");
+        const pattern = new RegExp('%([0-9A-F]{2})', 'g');
         const binaryString = escapedString.replace(pattern, function(match, subString) {
           return String.fromCharCode(`0x${subString}`);
         });

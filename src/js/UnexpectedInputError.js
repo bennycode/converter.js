@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 class UnexpectedInputError extends Error {
   constructor(message) {
