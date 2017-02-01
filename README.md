@@ -4,7 +4,7 @@ First draft of a converter collection ("something" → "something-else"). Writte
  
 ## Idea
 
-```javascript 1.6
+```javascript
 const converter = require('wire-webapp-converter');
 
 const result = converter.TypeConverter.unicodeStringToTypedArray('\u03A9');
