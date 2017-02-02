@@ -1,6 +1,7 @@
 "use strict";
 
-const TypeConverter = require('./src/js/TypeConverter');
+const converter = require('./index');
+const TypeConverter = converter.TypeConverter;
 
 try {
   TypeConverter.unicodeStringToTypedArray(7);
