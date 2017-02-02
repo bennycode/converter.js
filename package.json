@@ -9,7 +9,15 @@
     "url": "git+https://github.com/wireapp/wire-webapp-converter.git"
   },
   "scripts": {
-    "test": "eslint src/js/** --fix"
+    "lint-fix": "eslint src/js/** --fix",
+    "test": "gulp lint && gulp test"
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-jasmine": "^2.4.2",
+    "gulp-util": "^3.0.8",
+    "run-sequence": "^1.2.2"
+  }
 }
